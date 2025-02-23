@@ -1,0 +1,86 @@
+.popularMovies {
+	font-size: 1.5rem;
+	text-align: center;
+	color: #e3e0e0;
+	font-family: "Roboto", serif;
+}
+
+.movies-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 70%;
+	justify-self: center;
+	padding: 1rem 0;
+	gap: 1.5rem;
+}
+
+.movies-list article {
+	margin-bottom: 1.5rem;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.movies-list article:hover {
+	transform: scale(1.05);
+}
+
+.movies-list figure {
+	margin: 0;
+	border-radius: 0.8rem;
+	overflow: hidden;
+}
+
+.movies-list img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.movies-list figcaption {
+	padding: 1rem;
+	text-align: center;
+	background-color: #f2f2f2;
+	border-bottom-left-radius: 0.8rem;
+	border-bottom-right-radius: 0.8rem;
+}
+
+.movies-list h3 {
+	font-size: 1.2rem;
+	margin: 0;
+}
+
+.movies-list p {
+	font-size: 0.9rem;
+	color: #555;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+.pagination button {
+	background-color: #007bff;
+	color: #f2f2f2;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.pagination button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+@media screen and (min-width: 768px) {
+	.movies-list {
+		grid-template-columns: repeat(3, 1fr);
+		width: 80%;
+		margin: 0 auto;
+		padding: 2rem 0;
+		gap: 2rem;
+	}
+}

@@ -1,0 +1,20 @@
+.searchBarContainer {
+	font-size: large;
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	gap: 1rem;
+}
+.search {
+	font-family: "Roboto", serif;
+	height: 2rem;
+	border-radius: 15px;
+	border: none;
+	padding: 1rem;
+	width: 100%;
+}
+.labelSearch {
+	font-family: "Roboto", serif;
+	font-weight: bold;
+	margin-left: 2.8rem;
+}

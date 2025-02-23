@@ -1,0 +1,22 @@
+html {
+	scroll-behavior: smooth;
+}
+footer {
+	align-items: center;
+}
+.footerNav {
+	display: flex;
+	justify-content: center;
+}
+footer p {
+	color: #e3e0e0;
+	font-family: "Roboto", serif;
+	display: flex;
+	justify-self: center;
+}
+.retourHautPage {
+	color: #e3e0e0;
+}
+.retourHautPage:hover {
+	color: #212020;
+}
