@@ -1,34 +1,23 @@
-import Fuse from "fuse.js";
-import { useEffect, useMemo, useState } from "react";
-import { fuseOptions } from "../../services/Fuseoptions/fuseOption";
-import type { MoviesListProps } from "../../types/moviesProps";
-
+import { useState } from "react";
+import "../Css/searchBar.css";
 type SearchBarProps = {
-	movies: MoviesListProps[];
-	onSearch: (results: MoviesListProps[]) => void;
+	onSearch: (searchTerm: string) => void;
 };
 
-export default function SearchBar({ movies, onSearch }: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
 	const [searchTerm, setSearchTerm] = useState("");
-	const fuse = useMemo(() => new Fuse(movies, fuseOptions), [movies]);
 
-	useEffect(() => {
-		if (!searchTerm.trim()) {
-			onSearch(movies);
-			return;
-		}
-
-		const results = fuse.search(searchTerm).map((result) => result.item);
-		onSearch(results);
-	}, [searchTerm, movies, fuse, onSearch]);
-
-	const handleSearchTerm = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setSearchTerm(event.target.value);
+	const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = e.target.value;
+		setSearchTerm(value);
+		onSearch(value);
 	};
 
 	return (
-		<header className="navHeader searchBarContainer">
-			<label htmlFor="searchBar">Recherche</label>
+		<header className="searchBarContainer">
+			<label htmlFor="searchBar" className="labelSearch">
+				Recherche
+			</label>
 			<input
 				type="search"
 				id="searchBar"
@@ -36,7 +25,7 @@ export default function SearchBar({ movies, onSearch }: SearchBarProps) {
 				className="search"
 				placeholder="Que voulez vous regarder ?"
 				value={searchTerm}
-				onChange={handleSearchTerm}
+				onChange={handleSearch}
 			/>
 		</header>
 	);

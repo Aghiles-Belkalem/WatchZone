@@ -1,0 +1,28 @@
+header {
+	padding: 2rem;
+}
+
+.logo {
+	border-radius: 50%;
+	width: 15%;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.logo:hover {
+	transform: scale(1.1);
+}
+
+.catchphrase {
+	font-family: "Roboto", sans-serif;
+	font-size: 1.2rem;
+	color: #333;
+	margin-top: 0.5rem;
+	text-align: center;
+	font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+	.logo {
+		width: 65px;
+	}
+}
